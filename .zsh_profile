@@ -15,7 +15,7 @@ export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 export GIT_EDITOR="$VIM"
 export K9S_EDITOR="$VIM"
 export EDITOR="$VIM"
-export DOTFILES="$HOME/.dotfiles"
+export DOTF="$HOME/dotfiles"
 addToPathFront "$HOME/.local/scripts"
 addToPathFront "$HOME/.local/bin"
 
