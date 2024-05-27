@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# sudo apt install fzf stow tmux vim ninja-build gettext cmake unzip curl
+
+mkdir -p ~/go/{bin,pkg,src}
+mkdir -p $HOME/.config/personal/env
+
+source $HOME/.dotfiles/bin/.local/scripts/WATCHED_DIRECTORIES
+
+# Loop through the array and create each directory
+for dir in "${WATCHED_DIRECTORIES[@]}"; do
+  mkdir -p "$dir"
+  if [ $? -eq 0 ]; then
+    echo "Created directory: $dir"
+  else
+    echo "Failed to create directory: $dir"
+  fi
+done
+
+### Install neovim from source
+#
+#https://github.com/neovim/neovim/wiki/Building-Neov
+#

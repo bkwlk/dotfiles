@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+export WATCHED_DIRECTORIES=("$HOME/files/projects/go" "$HOME/files/projects" "$HOME/files/projects/etc" "$HOME/" "$HOME/go/src/github.com/bkwlk")
