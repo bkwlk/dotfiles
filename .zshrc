@@ -1,3 +1,4 @@
+# export GNUTLS_CPUID_OVERRIDE=0x1 # Used when some Virtual Machines have trouble with git network requests
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
 
@@ -11,7 +12,6 @@ export COLORTERM=truecolor
 # export TERM="screen-256color"
 
 . "$HOME/.cargo/env"
-
 . "$HOME/.acme.sh/acme.sh.env"
 
 eval "$(zoxide init zsh)"
