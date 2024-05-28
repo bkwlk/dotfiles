@@ -45,13 +45,18 @@ alias aws-profile='export AWS_PROFILE=$(sed -n "s/\[\(.*\)\]/\1/gp" ~/.aws/crede
 alias t="terraform"
 alias kc="kubectl config current-context"
 alias kx="kubectx"
-alias cd="z"
 
-alias ezp="$VIM $DOTFILES/zsh/.zsh_profile"
+# Overwrite sys commands
+alias cd="z"
+alias cat="bat"
+alias l="eza --icons -a -l --git"
+alias ltree="eza --icons -l --git --tree --level=2"
+
+alias ezp="$VIM $DOTF/zsh/.zsh_profile"
 alias yolo="git push --force"
-alias cdutils="cd $DOTFILES/utils/.config/utils/"
-alias cdd="cd $DOTFILES"
-alias ewatch="$VIM $DOTFILES/bin/.local/scripts/WATCHED_DIRECTORIES"
+alias cdutils="cd $DOTF/utils/.config/utils/"
+alias cdd="cd $DOTF"
+alias ewatch="$VIM $DOTF/bin/.local/scripts/WATCHED_DIRECTORIES"
 
 alias -g -- -h="-h 2>&1 | bat --language=help --style=plain"
 alias -g -- --help="--help 2>&1 | bat --language=help --style=plain"
