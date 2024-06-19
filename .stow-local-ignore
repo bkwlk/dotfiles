@@ -1,5 +1,6 @@
 .git
 goinstalls
-init
+init.sh
 install
 dependencies
+packages
