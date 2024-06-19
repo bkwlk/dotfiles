@@ -33,7 +33,7 @@ eval "$(starship init zsh)"
 
 #znap source marlonrichert/zsh-autocomplete
 #znap source jeffreytse/zsh-vi-mode
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ] && source $XDG_CONFIG_HOME/fzf/fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!{.git,node_modules}/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND='rg --files --hidden --follow --glob "!{.git,node_modules}/*"'
