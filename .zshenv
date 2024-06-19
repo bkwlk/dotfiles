@@ -10,10 +10,9 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-export PATH="$PATH:$HOME/.local/bin/nvim-linux64/bin"
-export VIMRUNTIME="/home/ubuntu/.local/bin/nvim-linux64/share/nvim/runtime"
+export PATH="$PATH:$HOME/.local/bin/nvim/bin"
+export VIMRUNTIME="$HOME/.local/bin/nvim/share/nvim/runtime"
 
-export VIM="vim"
 export EDITOR="nvim"
 export GIT_EDITOR="nvim"
 export K9S_EDITOR="nvim"

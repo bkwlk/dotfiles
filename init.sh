@@ -21,10 +21,9 @@ chsh -s $(which zsh)
 # Install Neovim
 # https://github.com/neovim/neovim/blob/master/INSTALL.md#linux
 curl -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz -o /tmp/nvim.tar.gz && \
-sudo rm -rf /opt/nvim && \
-sudo mkdir -p /opt/nvim && \
-sudo tar -C /opt/nvim -xzf /tmp/nvim.tar.gz --strip-components=1
-ln -s /opt/nvim/bin/nvim ~/.local/bin/nvim
+sudo rm -rf "$HOME/.local/bin/nvim" && \
+sudo mkdir -p "$HOME/.local/bin/nvim" && \
+sudo tar -C "$HOME/.local/bin/nvim" -xzf /tmp/nvim.tar.gz --strip-components=1
 
 echo "Add neovim bin location to path!"
 # echo 'echo \'export PATH="$PATH:/opt/nvim/bin"\' >> ~/.bashrc'
