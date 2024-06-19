@@ -37,3 +37,5 @@ curl -sS https://starship.rs/install.sh | sh
 # https://github.com/junegunn/fzf?tab=readme-ov-file#using-git
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --no-bash --no-fish --xdg --all --key-bindings --completion --no-update-rc
+
+echo "Run stow -v ."

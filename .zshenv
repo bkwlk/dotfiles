@@ -10,7 +10,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-VIM="nvim"
+export VIM="nvim"
 export EDITOR="$VIM"
 export GIT_EDITOR="$VIM"
 export K9S_EDITOR="$VIM"

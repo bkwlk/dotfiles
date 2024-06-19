@@ -2,3 +2,5 @@ ripgrep
 tmux
 zsh
 stow
+clang
+make
