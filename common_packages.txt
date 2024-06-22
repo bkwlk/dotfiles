@@ -4,3 +4,5 @@ zsh
 stow
 gcc
 make
+g++
+bat

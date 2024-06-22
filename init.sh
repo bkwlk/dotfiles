@@ -67,4 +67,9 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+curl -fsSL https://fnm.vercel.app/install | bash -s -- -s
+fnm use --install-if-missing 22
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile complete 
+
 echo "Run stow -v ."

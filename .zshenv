@@ -11,7 +11,15 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export PATH="$PATH:$HOME/.local/bin/nvim/bin"
+export PATH="$PATH:$HOME/.local/bin/go/bin"
 export VIMRUNTIME="$HOME/.local/bin/nvim/share/nvim/runtime"
+. "$HOME/.cargo/env"
+
+FNM_PATH="/home/ubuntu/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/ubuntu/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
 
 export EDITOR="nvim"
 export GIT_EDITOR="nvim"
