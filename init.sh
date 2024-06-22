@@ -1,18 +1,47 @@
-PACKAGE_FILE="packages"
+#!/bin/bash
 
-# Check if the file exists
-if [[ ! -f "$PACKAGE_FILE" ]]; then
-  echo "Package file $PACKAGE_FILE not found!"
-  exit 1
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+read_packages() {
+    local file="$1"
+    if [[ -f "$file" ]]; then
+        cat "$file"
+    else
+        echo "File $file not found."
+        exit 1
+    fi
+}
+
+install_ubuntu() {
+    local packages=$(read_packages "common_packages.txt")$(read_packages "ubuntu_packages.txt")
+    echo "Updating package list..."
+    sudo apt update
+
+    echo "Installing packages: $packages"
+    sudo apt install -y $packages
+}
+
+install_arch() {
+    local packages=$(read_packages "common_packages.txt")$(read_packages "arch_packages.txt")
+    echo "Updating package list..."
+    sudo pacman -Sy
+
+    echo "Installing packages: $packages"
+    sudo pacman -S --noconfirm $packages
+}
+
+if command_exists apt; then
+    echo "Detected Ubuntu system."
+    install_ubuntu
+elif command_exists pacman; then
+    echo "Detected Arch system."
+    install_arch
+else
+    echo "Unsupported system. This script only supports Ubuntu and Arch."
+    exit 1
 fi
-
-# Read the package file and install each package
-while IFS= read -r package; do
-  if [[ -n "$package" ]]; then
-    echo "Installing $package..."
-    sudo apt-get install -y "$package"
-  fi
-done < "$PACKAGE_FILE"
 
 TMUX_VERSION="3.4"
 mkdir -p "$HOME/.zsh"
@@ -29,8 +58,7 @@ echo "Add neovim bin location to path!"
 # echo 'echo \'export PATH="$PATH:/opt/nvim/bin"\' >> ~/.bashrc'
 
 # Install starship
-curl -sS https://starship.rs/install.sh | sh
-
+curl -sS https://starship.rs/install.sh | sh -s -- -y -b ~/.local/bin
 
 # FZF install
 # https://github.com/junegunn/fzf?tab=readme-ov-file#using-git
