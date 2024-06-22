@@ -65,4 +65,6 @@ curl -sS https://starship.rs/install.sh | sh -s -- -y -b ~/.local/bin
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --no-bash --no-fish --xdg --all --key-bindings --completion --no-update-rc
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 echo "Run stow -v ."
