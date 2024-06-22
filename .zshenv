@@ -13,11 +13,14 @@ fi
 export PATH="$PATH:$HOME/.local/bin/nvim/bin"
 export PATH="$PATH:$HOME/.local/bin/go/bin"
 export VIMRUNTIME="$HOME/.local/bin/nvim/share/nvim/runtime"
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
 . "$HOME/.cargo/env"
 
-FNM_PATH="/home/ubuntu/.local/share/fnm"
+FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/ubuntu/.local/share/fnm:$PATH"
+  export PATH="$HOME/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
 
